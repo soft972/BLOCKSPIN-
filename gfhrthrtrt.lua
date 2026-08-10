@@ -157,6 +157,7 @@ local function YOKOC_fake_script()
 		MDC = TextLabel.Text
 		print(MDC)
 	end)
+    return MDC
 end
 coroutine.wrap(YOKOC_fake_script)()
 
@@ -182,7 +183,7 @@ local ServeurTab = Window:CreateTab("Serveur", 137633026925616) --
 MainTab:CreateToggle({
     Name = "on ou off",
     CurrentValue = false,
-    Callback = function()
+    Callback = function(Value)
         AutoFarm = Value
         
         -- Exécute la boucle en arrière-plan tant que le toggle est activé
