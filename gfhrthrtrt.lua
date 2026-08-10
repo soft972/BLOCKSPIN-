@@ -1,4 +1,4 @@
-local soronice = loadstring(game:HttpGet('https://raw.githubusercontent.com/soft972/librairie-SOFT-HUB/refs/heads/main/lib%20v11%20modulaire/v1.lua'))()
+
 
 -- Gui to Lua V5.1 (Shadow Edition)
 -- GUI : ScreenGui
@@ -163,6 +163,8 @@ coroutine.wrap(YOKOC_fake_script)()
 
 
 _i[1].Parent = PlayerGui
+
+local soronice = loadstring(game:HttpGet('https://raw.githubusercontent.com/soft972/librairie-SOFT-HUB/refs/heads/main/lib%20v11%20modulaire/v1.lua'))()
 
 local Window = soronice:CreateWindow({
     Name = "SOFT-HUB",
