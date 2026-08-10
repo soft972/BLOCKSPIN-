@@ -155,7 +155,7 @@ local function YOKOC_fake_script()
 			TextLabel.Text = nouveauTexte
 		end
 		MDC = TextLabel.Text
-		print(MDC)
+		
 	end)
     return MDC
 end
@@ -189,14 +189,13 @@ MainTab:CreateToggle({
         -- Exécute la boucle en arrière-plan tant que le toggle est activé
         task.spawn(function()
         while AutoFarm do
-        task.wait(0.5)
+        MDC = MDC + 1
+print(MDC)
 local args = {
     MDC,
-    "consume_power_up",
-    Instance.new("Tool", nil)
+    "set_sprinting_1",
+    false
 }
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Get"):InvokeServer(unpack(args))
-end
-        end)
-    end
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Send"):FireServer(unpack(args))
+end)
 })
