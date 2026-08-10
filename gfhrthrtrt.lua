@@ -173,7 +173,7 @@ end
 
 -- Scripts:
 
-local function FWVXD_fake_script()
+local function OZASH_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[5]
@@ -214,9 +214,58 @@ local function FWVXD_fake_script()
 		CodeDisplay.Text = "<font color=\"#FF3333\">-- ERREUR COMPATIBILITÉ EXÉCUTEUR --</font>"
 	end
 end
-coroutine.wrap(FWVXD_fake_script)()
+coroutine.wrap(OZASH_fake_script)()
 
-local function GAYDK_fake_script()
+local function RCPGH_fake_script()
+	local script = Instance.new('LocalScript')
+	script.Name = [[LocalScript]]
+	script.Parent = _i[5]
+
+	local TextLabel = script.Parent -- adapte le chemin si besoin
+	
+	local separateurs = {".", ":"} -- 1er groupe séparé -> "." , 2e -> ":" , puis ça recommence
+	
+	local function filtrerTexte(texte)
+		local groupes = {}
+		local actuel = ""
+	
+		for i = 1, #texte do
+			local c = texte:sub(i, i)
+			if c:match("%d") then
+				actuel = actuel .. c
+			else
+				if actuel ~= "" then
+					table.insert(groupes, actuel)
+					actuel = ""
+				end
+			end
+		end
+		if actuel ~= "" then
+			table.insert(groupes, actuel)
+		end
+	
+		local resultat = ""
+		for i, g in ipairs(groupes) do
+			if i > 1 then
+				local idx = ((i - 2) % #separateurs) + 1
+				resultat = resultat .. separateurs[idx]
+			end
+			resultat = resultat .. g
+		end
+	
+		return resultat
+	end
+	
+	TextLabel:GetPropertyChangedSignal("Text"):Connect(function()
+		local nouveauTexte = filtrerTexte(TextLabel.Text)
+		if nouveauTexte ~= TextLabel.Text then
+			TextLabel.Text = nouveauTexte
+		end
+	end)
+end
+coroutine.wrap(RCPGH_fake_script)()
+
+local function QQKHT_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[8]
@@ -273,7 +322,7 @@ local function GAYDK_fake_script()
 		end
 	end)
 end
-coroutine.wrap(GAYDK_fake_script)()
+coroutine.wrap(QQKHT_fake_script)()
 
 
 _i[1].Parent = PlayerGui
