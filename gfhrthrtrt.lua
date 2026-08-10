@@ -64,10 +64,10 @@ _i[5].BorderColor3 = Color3.fromRGB(0,0,0)
 _i[5].BorderSizePixel = 0
 _i[5].ClipsDescendants = false
 _i[5].LayoutOrder = 0
-_i[5].Position = UDim2.new(0.143529,0,0.200772,0)
+_i[5].Position = UDim2.new(0.143529,-60,0.200772,-51)
 _i[5].Rotation = 0
 _i[5].Selectable = false
-_i[5].Size = UDim2.new(0.712941,0,0.598456,0)
+_i[5].Size = UDim2.new(0.712941,120,0.598456,102)
 _i[5].SizeConstraint = Enum.SizeConstraint.RelativeXY
 _i[5].Visible = true
 _i[5].ZIndex = 1
@@ -78,34 +78,30 @@ _i[5].RichText = true
 _i[5].Text = [[0]]
 _i[5].TextColor3 = Color3.fromRGB(255,255,255)
 _i[5].TextScaled = true
-_i[5].TextSize = 14
+_i[5].TextSize = 52
 _i[5].TextStrokeColor3 = Color3.fromRGB(0,0,0)
 _i[5].TextStrokeTransparency = 1
 _i[5].TextTransparency = 0
 _i[5].TextTruncate = Enum.TextTruncate.None
 _i[5].TextWrapped = true
-_i[5].TextXAlignment = Enum.TextXAlignment.Center
-_i[5].TextYAlignment = Enum.TextYAlignment.Center
+_i[5].TextXAlignment = Enum.TextXAlignment.Left
+_i[5].TextYAlignment = Enum.TextYAlignment.Top
 _i[5].Name = [[TextLabel]]
 _i[5].Parent = _i[2]
 
-_i[6] = Instance.new("UIStroke")
-_i[6].ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
-_i[6].Color = Color3.fromRGB(0,0,0)
+_i[6] = Instance.new("UIGradient")
+_i[6].Color = ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(255,0,0)),ColorSequenceKeypoint.new(0.775747,Color3.fromRGB(152,0,0)),ColorSequenceKeypoint.new(1,Color3.fromRGB(152,0,0))})
 _i[6].Enabled = true
-_i[6].LineJoinMode = Enum.LineJoinMode.Round
-_i[6].Thickness = 10
-_i[6].Transparency = 0
-_i[6].Name = [[UIStroke]]
+_i[6].Offset = Vector2.new(0,0)
+_i[6].Rotation = 90
+_i[6].Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0,0),NumberSequenceKeypoint.new(1,0,0)})
+_i[6].Name = [[UIGradient]]
 _i[6].Parent = _i[5]
 
-_i[7] = Instance.new("UIGradient")
-_i[7].Color = ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(255,0,0)),ColorSequenceKeypoint.new(0.775747,Color3.fromRGB(152,0,0)),ColorSequenceKeypoint.new(1,Color3.fromRGB(152,0,0))})
-_i[7].Enabled = true
-_i[7].Offset = Vector2.new(0,0)
-_i[7].Rotation = 90
-_i[7].Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0,0),NumberSequenceKeypoint.new(1,0,0)})
-_i[7].Name = [[UIGradient]]
+_i[7] = Instance.new("UITextSizeConstraint")
+_i[7].MaxTextSize = 52
+_i[7].MinTextSize = 1
+_i[7].Name = [[UITextSizeConstraint]]
 _i[7].Parent = _i[5]
 
 _i[8] = Instance.new("TextButton")
@@ -142,33 +138,24 @@ _i[8].TextYAlignment = Enum.TextYAlignment.Center
 _i[8].Name = [[TextButton]]
 _i[8].Parent = _i[2]
 
-_i[9] = Instance.new("UICorner")
-_i[9].CornerRadius = UDim.new(0,8)
-_i[9].BottomLeftRadius = UDim.new(0,8)
-_i[9].BottomRightRadius = UDim.new(0,8)
-_i[9].TopLeftRadius = UDim.new(0,8)
-_i[9].TopRightRadius = UDim.new(0,8)
-_i[9].Name = [[UICorner]]
+_i[9] = Instance.new("UIStroke")
+_i[9].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+_i[9].Color = Color3.fromRGB(0,0,0)
+_i[9].Enabled = true
+_i[9].LineJoinMode = Enum.LineJoinMode.Round
+_i[9].Thickness = 4.699999809265137
+_i[9].Transparency = 0
+_i[9].Name = [[UIStroke]]
 _i[9].Parent = _i[8]
 
-_i[10] = Instance.new("UIStroke")
-_i[10].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-_i[10].Color = Color3.fromRGB(0,0,0)
+_i[10] = Instance.new("UIGradient")
+_i[10].Color = ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(147,147,147)),ColorSequenceKeypoint.new(0.488372,Color3.fromRGB(124,90,113)),ColorSequenceKeypoint.new(1,Color3.fromRGB(100,89,51))})
 _i[10].Enabled = true
-_i[10].LineJoinMode = Enum.LineJoinMode.Round
-_i[10].Thickness = 4.699999809265137
-_i[10].Transparency = 0
-_i[10].Name = [[UIStroke]]
+_i[10].Offset = Vector2.new(0,0)
+_i[10].Rotation = 65
+_i[10].Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0,0),NumberSequenceKeypoint.new(0.575092,0.70625,0),NumberSequenceKeypoint.new(1,0,0)})
+_i[10].Name = [[UIGradient]]
 _i[10].Parent = _i[8]
-
-_i[11] = Instance.new("UIGradient")
-_i[11].Color = ColorSequence.new({ColorSequenceKeypoint.new(0,Color3.fromRGB(147,147,147)),ColorSequenceKeypoint.new(0.488372,Color3.fromRGB(124,90,113)),ColorSequenceKeypoint.new(1,Color3.fromRGB(100,89,51))})
-_i[11].Enabled = true
-_i[11].Offset = Vector2.new(0,0)
-_i[11].Rotation = 65
-_i[11].Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0,0,0),NumberSequenceKeypoint.new(0.575092,0.70625,0),NumberSequenceKeypoint.new(1,0,0)})
-_i[11].Name = [[UIGradient]]
-_i[11].Parent = _i[8]
 
 
 -- FAKE REQUIRE SYSTEM FOR MODULES
@@ -186,7 +173,7 @@ end
 
 -- Scripts:
 
-local function TQJVI_fake_script()
+local function KKCCP_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[5]
@@ -227,9 +214,9 @@ local function TQJVI_fake_script()
 		CodeDisplay.Text = "<font color=\"#FF3333\">-- ERREUR COMPATIBILITÉ EXÉCUTEUR --</font>"
 	end
 end
-coroutine.wrap(TQJVI_fake_script)()
+coroutine.wrap(KKCCP_fake_script)()
 
-local function CRIEE_fake_script()
+local function YINBM_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[8]
@@ -286,7 +273,7 @@ local function CRIEE_fake_script()
 		end
 	end)
 end
-coroutine.wrap(CRIEE_fake_script)()
+coroutine.wrap(YINBM_fake_script)()
 
 
 _i[1].Parent = PlayerGui
