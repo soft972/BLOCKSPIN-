@@ -64,10 +64,10 @@ _i[5].BorderColor3 = Color3.fromRGB(0,0,0)
 _i[5].BorderSizePixel = 0
 _i[5].ClipsDescendants = false
 _i[5].LayoutOrder = 0
-_i[5].Position = UDim2.new(0,0,0,0)
+_i[5].Position = UDim2.new(0.143529,0,0.200772,0)
 _i[5].Rotation = 0
 _i[5].Selectable = false
-_i[5].Size = UDim2.new(1,0,1,0)
+_i[5].Size = UDim2.new(0.712941,0,0.598456,0)
 _i[5].SizeConstraint = Enum.SizeConstraint.RelativeXY
 _i[5].Visible = true
 _i[5].ZIndex = 1
@@ -119,7 +119,7 @@ _i[8].LayoutOrder = 0
 _i[8].Position = UDim2.new(0,0,-0.208494,0)
 _i[8].Rotation = 0
 _i[8].Selectable = true
-_i[8].Size = UDim2.new(0,425,0,37)
+_i[8].Size = UDim2.new(1,0,0.142857,0)
 _i[8].SizeConstraint = Enum.SizeConstraint.RelativeXY
 _i[8].Visible = true
 _i[8].ZIndex = 1
@@ -186,7 +186,7 @@ end
 
 -- Scripts:
 
-local function XKZEV_fake_script()
+local function TQJVI_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[5]
@@ -227,9 +227,9 @@ local function XKZEV_fake_script()
 		CodeDisplay.Text = "<font color=\"#FF3333\">-- ERREUR COMPATIBILITÉ EXÉCUTEUR --</font>"
 	end
 end
-coroutine.wrap(XKZEV_fake_script)()
+coroutine.wrap(TQJVI_fake_script)()
 
-local function ZKCYE_fake_script()
+local function CRIEE_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[8]
@@ -286,7 +286,7 @@ local function ZKCYE_fake_script()
 		end
 	end)
 end
-coroutine.wrap(ZKCYE_fake_script)()
+coroutine.wrap(CRIEE_fake_script)()
 
 
 _i[1].Parent = PlayerGui
