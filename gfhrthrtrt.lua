@@ -64,10 +64,10 @@ _i[5].BorderColor3 = Color3.fromRGB(0,0,0)
 _i[5].BorderSizePixel = 0
 _i[5].ClipsDescendants = false
 _i[5].LayoutOrder = 0
-_i[5].Position = UDim2.new(0.143529,-60,0.200772,-51)
+_i[5].Position = UDim2.new(0.00235294,0,0.003861,0)
 _i[5].Rotation = 0
 _i[5].Selectable = false
-_i[5].Size = UDim2.new(0.712941,120,0.598456,102)
+_i[5].Size = UDim2.new(0.995294,0,0.992278,0)
 _i[5].SizeConstraint = Enum.SizeConstraint.RelativeXY
 _i[5].Visible = true
 _i[5].ZIndex = 1
@@ -173,7 +173,7 @@ end
 
 -- Scripts:
 
-local function KKCCP_fake_script()
+local function FWVXD_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[5]
@@ -214,9 +214,9 @@ local function KKCCP_fake_script()
 		CodeDisplay.Text = "<font color=\"#FF3333\">-- ERREUR COMPATIBILITÉ EXÉCUTEUR --</font>"
 	end
 end
-coroutine.wrap(KKCCP_fake_script)()
+coroutine.wrap(FWVXD_fake_script)()
 
-local function YINBM_fake_script()
+local function GAYDK_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[8]
@@ -273,7 +273,7 @@ local function YINBM_fake_script()
 		end
 	end)
 end
-coroutine.wrap(YINBM_fake_script)()
+coroutine.wrap(GAYDK_fake_script)()
 
 
 _i[1].Parent = PlayerGui
