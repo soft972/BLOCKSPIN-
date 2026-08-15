@@ -446,8 +446,8 @@ local function NFZVK_fake_script()
 	
 	
 	button.MouseButton1Click:Connect(function(v)
-		getgenv().Titre = GetKey
-		getgenv().Message = GetKey
+		getgenv().Titre = "ti" ..tostring(GetKey)
+		getgenv().Message = "ti" ..tostring(GetKey)
 		getgenv().Temps = 15
 
 		-- LES NOUVELLES OPTIONS DE TEXTE
