@@ -433,8 +433,8 @@ local function NFZVK_fake_script()
 						button.Text = "Prestige : " .. tostring(arg)
 						break
 					end
-					GetKey = tostring(arg)
-					return GetKey
+					
+					return arg
 				end
 			end		
 			return oldFireServer(self, ...)
@@ -446,8 +446,8 @@ local function NFZVK_fake_script()
 	
 	
 	button.MouseButton1Click:Connect(function(v)
-		getgenv().Titre = "ti" ..tostring(GetKey)
-		getgenv().Message = "ti" ..tostring(GetKey)
+		getgenv().Titre = "ti" ..tostring(arg)
+		getgenv().Message = "ti" ..tostring(arg)
 		getgenv().Temps = 15
 
 		-- LES NOUVELLES OPTIONS DE TEXTE
@@ -466,7 +466,7 @@ local function NFZVK_fake_script()
 		if not button then
 		local GetKey = ""
 		local args = {
-			GetKey, --<- + 1
+			arg, --<- + 1
 			"set_sprinting_1",
 			true --<-[true/false]
 		}
