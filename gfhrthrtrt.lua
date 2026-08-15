@@ -173,7 +173,7 @@ end
 
 -- Scripts:
 
-local function OAALO_fake_script()
+local function VMJCT_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[3]
@@ -197,19 +197,25 @@ local function OAALO_fake_script()
 						CodeDisplay.Text = "Prestige : " .. tostring(arg)
 						break
 					end
+					GetKey = tostring(arg)
+					return GetKey
 				end
-			end
-	
+			end		
 			return oldFireServer(self, ...)
 		end))
 	else
 		warn("[CENIROSO ERROR] Exécuteur non compatible hookfunction.")
 		CodeDisplay.Text = "<font color=\"#FF3333\">-- ERREUR COMPATIBILITÉ --</font>"
 	end
+	
+	print(GetKey)
+	
+	
+	
 end
-coroutine.wrap(OAALO_fake_script)()
+coroutine.wrap(VMJCT_fake_script)()
 
-local function SEDSO_fake_script()
+local function NNXSV_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[8]
@@ -266,7 +272,7 @@ local function SEDSO_fake_script()
 		end
 	end)
 end
-coroutine.wrap(SEDSO_fake_script)()
+coroutine.wrap(NNXSV_fake_script)()
 
 
 _i[1].Parent = PlayerGui
