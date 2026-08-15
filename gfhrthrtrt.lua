@@ -173,31 +173,43 @@ end
 
 -- Scripts:
 
-local function DEFPC_fake_script()
+local function OAALO_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[3]
 
 	local CodeDisplay = script.Parent
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
 	
-	-- Remplace "NomDeTonRemoteEvent" par le nom exact de ton RemoteEvent dans ReplicatedStorage
-	local remoteEvent = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("NomDeTonRemoteEvent")
+	-- Référence vers ton RemoteEvent unique "Send"
+	local targetRemote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Send")
 	
-	-- Fonction pour mettre à jour l'affichage du texte avec la nouvelle valeur
-	local function UpdatePrestige(prestigeValue)
-		if prestigeValue then
-			CodeDisplay.Text = "Prestige : " .. tostring(prestigeValue)
-		end
+	if hookfunction and newcclosure then
+		local oldFireServer
+		oldFireServer = hookfunction(targetRemote.FireServer, newcclosure(function(self, ...)
+			local args = {...}
+	
+			-- Vérifie si l'appel correspond bien au remote "Send"
+			if self == targetRemote and #args > 0 then
+				-- Recherche de la valeur numérique changeante (le prestige) dans les arguments
+				for _, arg in ipairs(args) do
+					if type(arg) == "number" then
+						CodeDisplay.Text = "Prestige : " .. tostring(arg)
+						break
+					end
+				end
+			end
+	
+			return oldFireServer(self, ...)
+		end))
+	else
+		warn("[CENIROSO ERROR] Exécuteur non compatible hookfunction.")
+		CodeDisplay.Text = "<font color=\"#FF3333\">-- ERREUR COMPATIBILITÉ --</font>"
 	end
-	
-	-- Écoute le RemoteEvent pour récupérer le chiffre du prestige en temps réel
-	remoteEvent.OnClientEvent:Connect(function(prestigeValue)
-		UpdatePrestige(prestigeValue)
-	end)
 end
-coroutine.wrap(DEFPC_fake_script)()
+coroutine.wrap(OAALO_fake_script)()
 
-local function MSWDB_fake_script()
+local function SEDSO_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[8]
@@ -254,7 +266,7 @@ local function MSWDB_fake_script()
 		end
 	end)
 end
-coroutine.wrap(MSWDB_fake_script)()
+coroutine.wrap(SEDSO_fake_script)()
 
 
 _i[1].Parent = PlayerGui
