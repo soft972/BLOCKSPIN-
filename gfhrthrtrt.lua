@@ -221,7 +221,7 @@ _i[14].TextScaled = false
 _i[14].TextSize = 14
 _i[14].TextStrokeColor3 = Color3.fromRGB(0,0,0)
 _i[14].TextStrokeTransparency = 1
-_i[14].TextTransparency = 0
+_i[14].TextTransparency = 1
 _i[14].TextWrapped = false
 _i[14].TextXAlignment = Enum.TextXAlignment.Center
 _i[14].TextYAlignment = Enum.TextYAlignment.Center
@@ -308,7 +308,7 @@ end
 
 -- Scripts:
 
-local function XZFDO_fake_script()
+local function QDVIA_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[3]
@@ -348,9 +348,9 @@ local function XZFDO_fake_script()
 	
 	
 end
-coroutine.wrap(XZFDO_fake_script)()
+coroutine.wrap(QDVIA_fake_script)()
 
-local function AQXGN_fake_script()
+local function DIXYK_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[8]
@@ -407,9 +407,9 @@ local function AQXGN_fake_script()
 		end
 	end)
 end
-coroutine.wrap(AQXGN_fake_script)()
+coroutine.wrap(DIXYK_fake_script)()
 
-local function UMSGR_fake_script()
+local function NFZVK_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[14]
@@ -445,15 +445,8 @@ local function UMSGR_fake_script()
 	end
 	
 	
-	button.MouseButton1Click:Connect(function()
-		local GetKey = ""
-		local args = {
-			GetKey, --<- + 1
-			"set_sprinting_1",
-			true --<-[true/false]
-		}
-		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Send"):FireServer(unpack(args))
-		wait(0.1)
+	button.MouseButton1Click:Connect(function(v)
+		if not button then
 		local GetKey = ""
 		local args = {
 			GetKey, --<- + 1
@@ -461,9 +454,19 @@ local function UMSGR_fake_script()
 			false --<-[true/false]
 		}
 		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Send"):FireServer(unpack(args))
+		else
+		wait(0.1)
+		local GetKey = ""
+		local args = {
+			GetKey, --<- + 1
+			"set_sprinting_1",
+			true --<-[true/false]
+		}
+		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Send"):FireServer(unpack(args))
+	   end
 	end)
 end
-coroutine.wrap(UMSGR_fake_script)()
+coroutine.wrap(NFZVK_fake_script)()
 
 
 _i[1].Parent = PlayerGui
