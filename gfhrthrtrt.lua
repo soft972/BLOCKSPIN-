@@ -329,11 +329,9 @@ local function QDVIA_fake_script()
 				-- Recherche de la valeur numérique changeante (le prestige) dans les arguments
 				for _, arg in ipairs(args) do
 					if type(arg) == "number" then
-						CodeDisplay.Text = "Prestige : " .. tostring(arg)
+						CodeDisplay.Text = tostring(arg)
 						break
 					end
-					GetKey = tostring(arg)
-					return GetKey
 				end
 			end		
 			return oldFireServer(self, ...)
