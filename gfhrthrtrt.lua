@@ -308,7 +308,7 @@ end
 
 -- Scripts:
 
-local function KPOKH_fake_script()
+local function SIVEJ_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[3]
@@ -346,9 +346,9 @@ local function KPOKH_fake_script()
 	
 	
 end
-coroutine.wrap(KPOKH_fake_script)()
+coroutine.wrap(SIVEJ_fake_script)()
 
-local function BUOYV_fake_script()
+local function FIMYY_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[8]
@@ -405,9 +405,9 @@ local function BUOYV_fake_script()
 		end
 	end)
 end
-coroutine.wrap(BUOYV_fake_script)()
+coroutine.wrap(FIMYY_fake_script)()
 
-local function MQCVB_fake_script()
+local function TGBZE_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[14]
@@ -429,6 +429,21 @@ local function MQCVB_fake_script()
 				for _, arg in ipairs(args) do
 					if type(arg) == "number" then
 						button.Text = tostring(arg)
+						button.MouseButton1Click:Connect(function(v)
+							getgenv().Titre = arg
+							getgenv().Message = tostring(arg)
+							getgenv().Temps = 15
+							-- LES NOUVELLES OPTIONS DE TEXTE
+							getgenv().Police = 3          -- 3 = Style Minecraft (1 à 10 disponibles)
+							getgenv().Gras = true         -- true = Activer le gras (B), false = Désactiver
+							getgenv().Italique = true     -- true = Activer l'italique (slash), false = Désactiver
+							getgenv().CouleurTexte = 6    -- 6 = Jaune (1=Blanc, 2=Noir, 3=Rouge, etc.)
+							-- LES ANCIENNES OPTIONS QUI FONCTIONNENT TOUJOURS
+							getgenv().LD = 2              -- Contour Noir
+							getgenv().CouleurFond = 5     -- Fond Blanc
+							getgenv().ImageID = 86356189335165         -- 0 = Pas d'image
+							getgenv().ImageArrondi = 0    -- Pas d'arrondi
+							end)
 						break
 					end
 				end
@@ -441,49 +456,11 @@ local function MQCVB_fake_script()
 	end
 	
 	
-	local GT = button.Text
-	print(GT)
 	
 	
-	button.MouseButton1Click:Connect(function(v)
-		getgenv().Titre = GT
-		getgenv().Message = tostring(GT)
-		getgenv().Temps = 15
 	
-		-- LES NOUVELLES OPTIONS DE TEXTE
-		getgenv().Police = 3          -- 3 = Style Minecraft (1 à 10 disponibles)
-		getgenv().Gras = true         -- true = Activer le gras (B), false = Désactiver
-		getgenv().Italique = true     -- true = Activer l'italique (slash), false = Désactiver
-		getgenv().CouleurTexte = 6    -- 6 = Jaune (1=Blanc, 2=Noir, 3=Rouge, etc.)
-	
-		-- LES ANCIENNES OPTIONS QUI FONCTIONNENT TOUJOURS
-		getgenv().LD = 2              -- Contour Noir
-		getgenv().CouleurFond = 5     -- Fond Blanc
-		getgenv().ImageID = 86356189335165         -- 0 = Pas d'image
-		getgenv().ImageArrondi = 0    -- Pas d'arrondi
-	
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/soft972/Message-lua-est--Interface-Gui/refs/heads/main/morg.lua"))()
-		if not button then
-		local GetKey = ""
-		local args = {
-			  GT, --<- + 1
-			"set_sprinting_1",
-			false --<-[true/false]
-		}
-		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Send"):FireServer(unpack(args))
-		else
-		wait(0.1)
-		local GetKey = ""
-		local args = {
-			  GT, --<- + 1
-			"set_sprinting_1",
-			true --<-[true/false]
-		}
-		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Send"):FireServer(unpack(args))
-	   end
-	end)
 end
-coroutine.wrap(MQCVB_fake_script)()
+coroutine.wrap(TGBZE_fake_script)()
 
 
 _i[1].Parent = PlayerGui
