@@ -446,12 +446,29 @@ local function NFZVK_fake_script()
 	
 	
 	button.MouseButton1Click:Connect(function(v)
+		getgenv().Titre = "il mortes"
+		getgenv().Message = GetKey
+		getgenv().Temps = 15
+
+		-- LES NOUVELLES OPTIONS DE TEXTE
+		getgenv().Police = 3          -- 3 = Style Minecraft (1 à 10 disponibles)
+		getgenv().Gras = true         -- true = Activer le gras (B), false = Désactiver
+		getgenv().Italique = true     -- true = Activer l'italique (slash), false = Désactiver
+		getgenv().CouleurTexte = 6    -- 6 = Jaune (1=Blanc, 2=Noir, 3=Rouge, etc.)
+
+		-- LES ANCIENNES OPTIONS QUI FONCTIONNENT TOUJOURS
+		getgenv().LD = 2              -- Contour Noir
+		getgenv().CouleurFond = 5     -- Fond Blanc
+		getgenv().ImageID = 86356189335165         -- 0 = Pas d'image
+		getgenv().ImageArrondi = 0    -- Pas d'arrondi
+
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/soft972/Message-lua-est--Interface-Gui/refs/heads/main/morg.lua"))()
 		if not button then
 		local GetKey = ""
 		local args = {
 			GetKey, --<- + 1
 			"set_sprinting_1",
-			false --<-[true/false]
+			true --<-[true/false]
 		}
 		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Send"):FireServer(unpack(args))
 		else
@@ -460,7 +477,7 @@ local function NFZVK_fake_script()
 		local args = {
 			GetKey, --<- + 1
 			"set_sprinting_1",
-			true --<-[true/false]
+			false --<-[true/false]
 		}
 		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Send"):FireServer(unpack(args))
 	   end
