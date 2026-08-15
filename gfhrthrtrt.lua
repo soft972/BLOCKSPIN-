@@ -173,43 +173,31 @@ end
 
 -- Scripts:
 
-local function RZCWB_fake_script()
+local function DEFPC_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[3]
 
-	local ReplicatedStorage = game:GetService("ReplicatedStorage")
-	local sendRemote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Send")
+	local CodeDisplay = script.Parent
 	
-	-- Table pour suivre l'état et l'énergie des joueurs
-	local playerStates = {}
+	-- Remplace "NomDeTonRemoteEvent" par le nom exact de ton RemoteEvent dans ReplicatedStorage
+	local remoteEvent = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("NomDeTonRemoteEvent")
 	
-	sendRemote.OnServerEvent:Connect(function(player, sequence, action, state)
-		-- 1. Vérification de base du type de données (évite les erreurs si le client envoie du n'importe quoi)
-		if type(sequence) ~= "number" or type(action) ~= "string" or type(state) ~= "boolean" then
-			return -- On ignore la requête corrompue ou malveillante
+	-- Fonction pour mettre à jour l'affichage du texte avec la nouvelle valeur
+	local function UpdatePrestige(prestigeValue)
+		if prestigeValue then
+			CodeDisplay.Text = "Prestige : " .. tostring(prestigeValue)
 		end
+	end
 	
-		-- 2. Traitement de l'action de course
-		if action == "set_sprinting_1" then
-			if state == true then
-				-- Le joueur veut courir : Le serveur VÉRIFIE s'il a assez d'énergie
-				if playerHasEnoughEnergy(player) then
-					startPlayerSprint(player)
-				else
-					-- Le tricheur essaie de courir sans énergie : on refuse
-					stopPlayerSprint(player)
-				end
-			else
-				-- Le joueur s'arrête
-				stopPlayerSprint(player)
-			end
-		end
+	-- Écoute le RemoteEvent pour récupérer le chiffre du prestige en temps réel
+	remoteEvent.OnClientEvent:Connect(function(prestigeValue)
+		UpdatePrestige(prestigeValue)
 	end)
 end
-coroutine.wrap(RZCWB_fake_script)()
+coroutine.wrap(DEFPC_fake_script)()
 
-local function BQVLG_fake_script()
+local function MSWDB_fake_script()
 	local script = Instance.new('LocalScript')
 	script.Name = [[LocalScript]]
 	script.Parent = _i[8]
@@ -266,7 +254,7 @@ local function BQVLG_fake_script()
 		end
 	end)
 end
-coroutine.wrap(BQVLG_fake_script)()
+coroutine.wrap(MSWDB_fake_script)()
 
 
 _i[1].Parent = PlayerGui
